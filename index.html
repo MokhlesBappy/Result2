@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<body>
+
+    <div id="main">
+     <div id="input" align="center">
+        <h2>Enter Your Roll</h2>
+        <input type="text" id="studentName" placeholder="Student Roll">
+        <br>
+        <input style="margin-top: 10px;" type="button" onclick="result()" value="Check Your Result">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+          <div style="width: 200px;">
+            <p style="margin: 10px; text-align: left; margin-top: 50px;" id="output"></p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    
+
+    <script>
+ function result() {
+    var students= {
+    
+        101 : {
+          FirstName: "David",
+          lastName: "Smith",
+          Roll: "101",
+            Mark : "70",
+            GPA : "A"
+        },
+
+        102 : {
+          FirstName: "John Doe",
+          lastName: "Smith",
+          Roll: "101",
+            Mark : "80",
+            GPA : "A+"
+        },
+
+        103 : {
+          FirstName: "Mokles",
+          lastName: "Bappy",
+          Roll: "101",
+            Mark : "60",
+            GPA : "B"
+        },
+
+        104 : {
+          FirstName: "Maruf",
+          lastName: "BappyHossain",
+          Roll: "101",
+            Mark : "60",
+            GPA : "B"
+        },
+        105 : {
+          FirstName: "Arif",
+          lastName: "Islam",
+          Roll: "101",
+            Mark : "60",
+            GPA : "B"
+        }
+    }
+
+    var studentName=document.getElementById('studentName').value;
+    var input=studentName.toUpperCase();
+    var definition=students[input];
+    var output=document.getElementById("output");
+
+    if (definition==undefined){
+        output.innerHTML=`Data Not Found`;
+    }
+
+    else {
+        output.innerHTML=`Result: Passed </br> <hr> First Name: ${definition.FirstName} </br> <hr> Last Name: ${definition.lastName} </br> <hr> Last Roll: ${definition.Roll} </br> <hr> Grade Point : ${definition.GPA} </br> <hr> Mark: ${definition.Mark}`;
+    }
+ }
+
+
+    </script>
+</body>
+</html>
